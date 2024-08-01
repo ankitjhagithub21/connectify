@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import {CiLogout} from "react-icons/ci"
-import { setUser } from '../redux/slices/appSlice'
+import { setCurrChat, setUser } from '../redux/slices/appSlice'
 import { toast } from 'react-toastify'
 
 const Profile = () => {
@@ -17,6 +17,7 @@ const Profile = () => {
 
             if(data.success){
                 dispatch(setUser(null))
+                dispatch(setCurrChat(null))
                 toast.success(data.message)
             }
             
