@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import Message from "./Message";
 
 const MessageContainer = () => {
  const {currChat} = useSelector(state=>state.app)
@@ -28,10 +29,10 @@ const MessageContainer = () => {
     fetchMessages()
   },[currChat])
   return (
-    <div className='h-full p-2'>
+    <div className='h-full p-2 flex flex-col'>
        {
         loading ? 'Loading...' : messages.map((msg)=>{
-          return <div key={msg._id}>{msg.message}</div>
+          return <Message key={msg._id} msg={msg}/>
         })
        }
     </div>
