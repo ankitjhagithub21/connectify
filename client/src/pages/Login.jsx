@@ -90,25 +90,27 @@ const Login = () => {
               autoComplete='off'
             />
           </div>
-          <div className='relative'>
+          <div>
             <label htmlFor="password" className=" text-sm font-medium ">
               Password
             </label>
-            <input
-              type="password"
+          <div  className=" w-full px-4 py-2 mt-1 flex items-center  gap-2  border border-gray-300 rounded-md">
+          <input
+              type={showPassword ? 'text' :'password' }
               id="password"
               name="password"
               value={formData.password}
               onChange={handleChange}
-              className=" w-full px-4 py-2 mt-1  border border-gray-300 rounded-md"
+              className='w-full'
               required
 
             />
-             <button className='absolute top-10 right-2' type='button' onClick={()=>setShowPassword(!showPassword)}>
+            <button  type='button' onClick={()=>setShowPassword(!showPassword)}>
               {
                 showPassword ? <FaRegEyeSlash/> : <FaRegEye/>
               }
             </button>
+          </div>
           </div>
 
           <div>
