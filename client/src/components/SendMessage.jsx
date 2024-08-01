@@ -10,7 +10,7 @@ const SendMessage = () => {
 
   const handleSendMessage = (e) => {
     e.preventDefault();
-    toast.success("Testing")
+    toast.success(message)
     setMessage('')
   };
 

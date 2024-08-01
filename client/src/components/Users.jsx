@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import User from './User'
+import SearchBar from './SearchBar'
 
 const Users = () => {
     const [users, setUsers] = useState([])
@@ -24,13 +25,16 @@ const Users = () => {
 
     return (
         <div className='lg:w-1/4 w-full md:relative absolute  flex flex-col gap-3 border-r p-2'>
+         <SearchBar/>
 
-            {
+          <div className='flex flex-col gap-3'>
+          {
                 users.map((user) => {
                     return <User key={user._id} user={user}/>
                     
                 })
             }
+          </div>
 
         </div>
     )
