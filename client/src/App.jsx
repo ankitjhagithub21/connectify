@@ -10,19 +10,20 @@ import PageLoader from './components/PageLoader'
 
 
 const App = () => {
-  const {user,pageLoading} = useSelector(state=>state.app)
-  
-    useFetchAuthUser()
-    if(pageLoading){
-      return <PageLoader/>
-    }
-   
+  const { user, pageLoading } = useSelector(state => state.app)
+
+  useFetchAuthUser()
+
+  if (pageLoading) {
+    return <PageLoader />
+  }
+
   return (
     <>
       <Routes>
-        <Route path='/' element={user ? <Home/> : <Login/>}/>
-        <Route path='/register' element={<Register/>}/>
-        <Route path='/login' element={<Login/>}/>
+        <Route path='/' element={user ? <Home /> : <Login />} />
+        <Route path='/register' element={<Register />} />
+        <Route path='/login' element={<Login />} />
       </Routes>
     </>
   )

@@ -6,7 +6,8 @@ export const appSlice = createSlice({
         user:null,
         pageLoading:true,
         currChat:null,
-        messages:[]
+      
+      
     },
     reducers:{
         setUser:(state,action)=>{
@@ -18,13 +19,10 @@ export const appSlice = createSlice({
         setCurrChat:(state,action)=>{
             state.currChat = action.payload
         },
-        setMessages:(state,action)=>{
-            state.messages = action.payload
-        }
-        
+      
     }
 })
 
-export const {setUser,setPageLoading,setCurrChat,setMessages} = appSlice.actions
+export const {setUser,setPageLoading,setCurrChat} = appSlice.actions
 
 export default appSlice.reducer

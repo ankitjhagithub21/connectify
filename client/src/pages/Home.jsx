@@ -1,10 +1,8 @@
 import ChatContainer from '../components/ChatContainer'
 
-
-
 const Home = () => {
   
-  return (
+ return (
     <section className='h-screen w-full flex items-center justify-center p-5'>
       <ChatContainer />
     </section>
