@@ -4,12 +4,14 @@ import { toast } from "react-toastify"
 import Logo from '../components/Logo';
 import { useDispatch, useSelector } from 'react-redux';
 import { setUser } from '../redux/slices/appSlice';
+import { FaRegEye,FaRegEyeSlash } from "react-icons/fa";
 const Login = () => {
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const url = `${import.meta.env.VITE_SERVER_URL}/api/auth/login`
   const { user } = useSelector(state => state.app)
+  const [showPassword,setShowPassword] = useState(false)
   const [formData, setFormData] = useState({
 
     email: "",
@@ -88,7 +90,7 @@ const Login = () => {
               autoComplete='off'
             />
           </div>
-          <div>
+          <div className='relative'>
             <label htmlFor="password" className=" text-sm font-medium ">
               Password
             </label>
@@ -102,6 +104,11 @@ const Login = () => {
               required
 
             />
+             <button className='absolute top-10 right-2' type='button' onClick={()=>setShowPassword(!showPassword)}>
+              {
+                showPassword ? <FaRegEyeSlash/> : <FaRegEye/>
+              }
+            </button>
           </div>
 
           <div>
