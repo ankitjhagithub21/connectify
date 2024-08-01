@@ -4,6 +4,9 @@
     font-family: "Josefin Sans", sans-serif;
     outline: none;
 }
+::-webkit-scrollbar{
+    display: none;
+}
 body{
     background-color: #121323;
     color: white;

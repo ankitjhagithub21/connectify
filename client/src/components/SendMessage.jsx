@@ -5,9 +5,6 @@ const SendMessage = () => {
   
   const [message, setMessage] = useState('');
 
-
-  
-
   const handleSendMessage = (e) => {
     e.preventDefault();
     toast.success(message)
