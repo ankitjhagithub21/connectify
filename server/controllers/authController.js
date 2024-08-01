@@ -85,7 +85,8 @@ const register = async (req, res) => {
             user:{
                 _id:newUser._id,
                 name:newUser.name,
-                email:newUser.email
+                email:newUser.email,
+                profileImg:newUser.profileImg
             }
         })
 
@@ -131,7 +132,8 @@ const login = async (req, res) => {
         user = {
             _id:user._id,
             name:user.name,
-            email:user.email
+            email:user.email,
+            profileImg:user.profileImg
         }
 
         res.status(200).json({
