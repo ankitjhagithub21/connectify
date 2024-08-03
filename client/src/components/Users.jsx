@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react'
 import User from './User'
 import SearchBar from './SearchBar'
 import Profile from './Profile'
-import { useSelector } from 'react-redux'
+
 
 const Users = () => {
     const [users, setUsers] = useState([])
-    const {currchat} = useSelector(state=>state.app)
+   
     const fetchUsers = async () => {
         try {
             const res = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/users`, {

@@ -14,7 +14,7 @@ const MessageContainer = () => {
           credentials:'include'
         })
         const data = await res.json()
-        console.log(data.messages)
+      
         if(data.success){
           setMessages(data.messages)
         }
