@@ -4,7 +4,7 @@ import io from "socket.io-client"
 import { useDispatch, useSelector } from 'react-redux'
 import { setOnlineUsers, setSocket } from '../redux/slices/appSlice'
 const Home = () => {
-  
+   
   const dispatch = useDispatch()
   const {user,socket} = useSelector(state=>state.app)
   useEffect(()=>{

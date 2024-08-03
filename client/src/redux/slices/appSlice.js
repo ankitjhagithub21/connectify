@@ -8,6 +8,7 @@ export const appSlice = createSlice({
         currChat:null,
         socket:null,
         onlineUsers:null,
+        messages:[]
     },
     reducers:{
         setUser:(state,action)=>{
@@ -24,12 +25,15 @@ export const appSlice = createSlice({
         },
         setOnlineUsers:(state,action)=>{
             state.onlineUsers = action.payload
+        },
+        setMessages:(state,action)=>{
+            state.messages =action.payload
         }
 
       
     }
 })
 
-export const {setUser,setPageLoading,setCurrChat,setSocket,setOnlineUsers} = appSlice.actions
+export const {setUser,setPageLoading,setCurrChat,setSocket,setOnlineUsers,setMessages} = appSlice.actions
 
 export default appSlice.reducer
