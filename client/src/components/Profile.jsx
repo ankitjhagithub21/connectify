@@ -27,9 +27,9 @@ const Profile = () => {
     }
   
   return (
-    <div className='flex items-center justify-between w-full  border p-1 rounded-lg'>
+    <div className='flex items-center justify-between w-full h-[10%] border p-2 rounded-lg'>
       <div className='flex items-center gap-1'>
-      <img src={user.profileImg} alt={user.name} className='w-12 rounded-full' loading='lazy'/>
+      <img src={user.profileImg} alt={user.name} className='w-10 rounded-full' loading='lazy'/>
       <h2>{user.name}</h2>
       </div>
         <button onClick={handleLogout}>

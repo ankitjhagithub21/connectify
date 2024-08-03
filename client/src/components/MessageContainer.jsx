@@ -29,7 +29,7 @@ const MessageContainer = () => {
     fetchMessages()
   },[currChat])
   return (
-    <div className='h-full p-2 flex flex-col'>
+    <div className='h-[80%] p-2 flex flex-col w-full'>
        {
         loading ? 'Loading...' : messages.length==0 ? <p className="text-center text-lg">Let's start conversation</p>:  messages.map((msg)=>{
           return <Message key={msg._id} msg={msg}/>

@@ -6,8 +6,8 @@ const SearchBar = () => {
         e.preventDefault()
     }
   return (
-    <form className='border rounded-lg flex items-center p-3 gap-2' onSubmit={handleSubmit}>
-      <input type="text" value={query} onChange={(e)=>setQuery(e.target.value)} className='w-full'/>
+    <form className='border rounded-lg flex items-center  p-2 h-[10%] gap-2' onSubmit={handleSubmit}>
+      <input type="text" value={query} onChange={(e)=>setQuery(e.target.value)} className='w-full pl-2'/>
       <GoSearch size={25}/>
     </form>
   )

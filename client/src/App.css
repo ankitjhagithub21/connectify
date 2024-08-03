@@ -4,9 +4,7 @@
     font-family: "Josefin Sans", sans-serif;
     outline: none;
 }
-::-webkit-scrollbar{
-    display: none;
-}
+
 body{
     background-color: #121323;
     color: white;
@@ -14,4 +12,16 @@ body{
 
 input{
     background: transparent;
+}
+
+
+.scroll::-webkit-scrollbar {
+	width: 7px;
+	background-color:transparent;
+   
+}
+
+.scroll::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background-color:purple;
 }

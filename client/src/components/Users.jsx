@@ -27,16 +27,18 @@ const Users = () => {
     }, [])
 
     return (
-        <div className={`lg:w-1/4 w-full md:relative absolute bg-black md:bg-transparent ${currchat ? '-z-10':'z-10'} rounded-lg h-full flex flex-col gap-2 border-r p-2`}>
+        <div className={`md:w-1/4 w-full   flex flex-col gap-2 border-r p-2`}>
          <SearchBar/>
 
-          <div className='flex flex-col gap-3 h-full overflow-y-scroll  '>
+          <div className='flex flex-col gap-3 h-[80%] scroll p-2 overflow-y-scroll overflow-x-hidden'>
           {
                 users.map((user) => {
                     return <User key={user._id} user={user}/>
                     
                 })
             }
+           
+          
           </div>
           <Profile/>
 

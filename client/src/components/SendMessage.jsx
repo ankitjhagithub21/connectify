@@ -37,7 +37,7 @@ const SendMessage = () => {
   };
 
   return (
-    <form className='flex items-center p-2 gap-2 border-t' onSubmit={handleSendMessage}>
+    <form className='flex items-center p-2 gap-2 border-t w-full h-[10%]' onSubmit={handleSendMessage}>
       <input
         type="text"
         placeholder='Send message...'
