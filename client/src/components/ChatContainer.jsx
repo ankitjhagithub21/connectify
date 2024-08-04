@@ -6,7 +6,7 @@ const ChatContainer = () => {
   
     
     return (
-        <div className='container mx-auto h-[80vh]   border flex rounded-xl'>
+        <div className='container mx-auto h-[80vh]  relative  border flex rounded-xl'>
            <Users/>
            <Chat/>
         </div>
