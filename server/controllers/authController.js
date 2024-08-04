@@ -51,9 +51,7 @@ const register = async (req, res) => {
             .has().lowercase()                              // Must have lowercase letters
             .has().digits(2)                                // Must have at least 2 digits
             .has().not().spaces()                           // Should not have spaces
-            .has().not().symbols()                          // Should not have special characters
-            // .has().symbols()                               // Uncomment this line if special characters are required
-            ;
+            .has().symbols();                     
         
         const validationErrors = schema.validate(password, { list: true });
         
@@ -73,11 +71,11 @@ const register = async (req, res) => {
                     case 'spaces':
                         return 'Password should not have spaces.';
                     case 'symbols':
-                        return 'Password should not have special characters.';
+                        return 'Password must have atleast 1 special character.';
                     default:
                         return 'Invalid password.';
                 }
-            }).join(' ');
+            }).join(',');
         
             return res.status(400).json({
                 success: false,
