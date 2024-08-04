@@ -75,7 +75,7 @@ const register = async (req, res) => {
                     default:
                         return 'Invalid password.';
                 }
-            }).join(',');
+            }).join(' ');
         
             return res.status(400).json({
                 success: false,
