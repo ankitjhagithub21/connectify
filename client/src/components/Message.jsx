@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { format } from 'date-fns'
 
 const Message = ({ msg }) => {
-  const { user, currChat } = useSelector(state => state.app)
+  const { user} = useSelector(state => state.app)
 
   const formattedTime = format(new Date(msg.createdAt), 'MMM d, h:mm a')
 
