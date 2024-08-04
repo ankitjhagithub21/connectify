@@ -40,7 +40,9 @@ const register = async (req, res) => {
 
         }
 
-        //password validation
+        var passwordValidator = require('password-validator');
+
+        // Create a password schema
         var schema = new passwordValidator();
         schema
             .is().min(8)                                    // Minimum length 8
@@ -49,17 +51,46 @@ const register = async (req, res) => {
             .has().lowercase()                              // Must have lowercase letters
             .has().digits(2)                                // Must have at least 2 digits
             .has().not().spaces()                           // Should not have spaces
-         
+            .has().not().symbols()                          // Should not have special characters
+            // .has().symbols()                               // Uncomment this line if special characters are required
+            ;
         
+        const validationErrors = schema.validate(password, { list: true });
         
-        const validPassword = schema.validate(password)
-        if(!validPassword){
+        if (validationErrors.length > 0) {
+            const errorMessage = validationErrors.map(error => {
+                switch (error) {
+                    case 'min':
+                        return 'Password must be at least 8 characters long.';
+                    case 'max':
+                        return 'Password must be less than 100 characters long.';
+                    case 'uppercase':
+                        return 'Password must have at least one uppercase letter.';
+                    case 'lowercase':
+                        return 'Password must have at least one lowercase letter.';
+                    case 'digits':
+                        return 'Password must have at least 2 digits.';
+                    case 'spaces':
+                        return 'Password should not have spaces.';
+                    case 'symbols':
+                        return 'Password should not have special characters.';
+                    default:
+                        return 'Invalid password.';
+                }
+            }).join(' ');
+        
             return res.status(400).json({
                 success: false,
-                message: "Password Validation failed."
-            })
+                message: errorMessage
+            });
         }
+        
+        // Continue with the rest of your logic
 
+        
+        // Continue with the rest of your logic
+
+        
         const salt = await bcrypt.genSalt(10)
         const hashedPassword = await bcrypt.hash(password, salt);
 
